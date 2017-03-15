@@ -1,7 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [bbs.md](bbs.md)
-* [aolim.md](aolim.md)
-* [snapchat.md](snapchat.md)
+* [Thunka-boards](bbs.md)
+* [Thunkable Instant Messenger](aolim.md)
+* [Thunkchat](snapchat.md)
+*	[Appendices](appendices.md)
 
