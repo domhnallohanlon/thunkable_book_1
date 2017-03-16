@@ -18,9 +18,21 @@ To get started with we'll take some text from a textbox and display it in a labe
 
 ### Design
 
-The design for this app is really simple. You just need three components; a label, a textbox and a button.
+The design for this app is really simple. You just need three components; a label, a textbox and a button. Simply drag-and-drop the components from the palette on the left onto Screen1 in the middle.
+
+![Drag and Drop](img/get_and_set.gif)
+
+It **is** possible to rename your components, and for larger apps I would strongly recommend that you do so, but for now we will have three components on Screen1 with their default names. 
 
 ![Get and Set Design](img/comp_get_and_set.png)
+
+And you app will, initially, look like this:
+
+![Design Basic](img/design_gas_basic.png)
+
+Try experimenting with the properties to make it look a bit more user friendly:
+![Better Design](img/design_gas.png)
+
 
 <button>Open This Design in Thunkable</button>
 <button>Download the .aia Template</button>
@@ -30,6 +42,12 @@ The design for this app is really simple. You just need three components; a labe
 The code for this app is also reasonably straightforward. When the button is clicked we **get** the text from TextBox1 and **set** it as the text in Label1
 
 ![Get and Set Blocks](img/blocks_get_and_set.png)
+
+Once we've got this very basic app working it's time to add in some more code to make it work even better.
+
+![First Improvment](img/blocks_gas_better.png)
+
+The blue question marks that you see on the blocks here are called comments. These are notes that the programmer writes to explain what a certain block, or group of blocks, should do. Try right-clicking on a block now and adding in some comments of your own.
 
 ### What's Happening?
 
