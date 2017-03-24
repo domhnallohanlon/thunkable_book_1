@@ -78,7 +78,7 @@ This is the first time we've seen a non-visible componet. This simply means that
 
 ![TinyWebDB](img/comp_thunkaboards.png)
 
-If you're usign a component for the first time it is usually a good idea to consult the documentation (docs) to learn more about how it works. For instance, you can find all the documentation for the storage components - including the TinyWebDB - [here](http://thunkable.com/reference/components/storage_components.html)
+If you're using a component for the first time it is usually a good idea to consult the documentation (docs) to learn more about how it works. For instance, you can find all the documentation for the storage components - including the TinyWebDB - [here](http://thunkable.com/reference/components/storage_components.html)
 
 ### Blocks
 

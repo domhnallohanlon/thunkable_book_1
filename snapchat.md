@@ -10,9 +10,7 @@ The viral app contains the following adictive features:
 2. Draw doodles,
 3. Add text,
 4. Filter images,  
-5. Geotags,
-6. Apply a timestamp,
-7. Disappear after 30 seconds.
+5. Geofilters.
 
 ## 1. Capture & Display Pictures
 
@@ -65,14 +63,91 @@ Finally, the `Canvas1.PaintColor` is changed back to the original colour so that
 
 ## 4. Filter
 
-## 5. Geotag
+Image filtering, where you change the pixel data of the image itself, is not easy to acomplish at the moment in Thunkable. Dedicated image manipulation programs such as Photoshop or Pixlr are designed specifically for this sort of task, but our Canvas isn't really up to the job so we're going to have to think creatively. If you've ever been to the theatre or a concert you will have seen (though maybe not noticed!) lighting gels. These are basically bits of coloured plastic that go over stage lights to change the colour of the light.
 
-Now that we're comfortable with using the canvas, let's try a few sensors. For this app we're going to add in 
+![lighting gels](img/lighting_gels.jpg)
+
+Using this approach we can achieve a very similar effect to the filters that you see in most social media apps. 
+
+Before we begin let's do a checklist of what's required for a proof of concept:
+
+1. The canvas paint colour should be transparent
+2. The filter should be the full width and height of the canvas, i.e. no gaps around the edges.
+
+![Testing the filter](img/blocks_filter_test.png)
+
+Now that we have one filter working we need to add some more. One way to do this might be with a random number generator, leaving the final filter colour up to chance, but a better way to acheieve consistent results is by creating our own list of filters and allowing the user to swipe through the filters. This will provide a more familiar user experience, while also ensuring that we get a nice selection of filter colours. 
+
+To take the guesswork out of colour picking I've used the [material design reference guide](https://material.io/guidelines/style/color.html) by Google. I then did a Google search for the hex values of the colours I wanted and voila! RGB values for using in our app.
+
+![hex to rbg](img/hex_to_rgb.gif)
+
+### Lists
+
+Lists are integral components to almost all computer programs. A list is simply a collection of data, or variables, and sometimes you might see people referring to lists as "arrays" - which is just another word for a collection. 
+
+Since we have a collection of filter colours that we want to use in our app this is an ideal time to learn how to use lists. The best practice is to create an empty list first, an then add items to the list when the app loads. 
+
+Using the mutator you can add as many filter colours as you like.
+
+![list of filters](img/list_of_filters.gif)
+
+
+### Swipe Left and Right
+
+To swipe between filters we're going to use the heading property of the `Canvas1.flung` event. The heading tells us what direction the screen was swiped, but how exactly does your phone represent these directions? To better understand what happens when user swipes their finger across the screen we can make a test app. 
+
+![heading on screen](img/headings_app.gif)
+
+Making test apps like this is a good idea for any new feature that you want to better understand. Build an app that lets you visualise how the data change as new events occur. In this case I've displayed the results via the `set Screen1.title` property, but you could just as easily use a label or notifier if you like. 
+
+Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0, although we have to take into account the positive and negative signs.
+
+To my mind, the range of values can be visualised like this:
+
+![headings on compass](img/headings_compass.gif)
+
+Back in our test app we can use the absolute value of the headings to determine whether the screen was swiped left or right. The absolute value, which is also sometimes refered to as the magnitude, ignores the sign of a number and just looks at the value.
+
+![heading blocks](img/headings_blocks.png)
+
+In the test app we now use the notifer to give a short alert of which direction the screen was swiped. In our Thunkchat app, we'll be using this information to move back and forth through the filters. 
+
+![heading directions](img/heading_directions.gif)
+
+### List Index
+
+Now that we have our list of filter colours, and the ability to track left and right swipes we need to keep track of which filter we are on. To do this we need to understand a litte bit about list indexes. The index a list is just the numeric position of each item in the list. In many programming langauges it is customary to start counting at 0 however in Thunkable, and other Blockly-based software, we start counting from 1. This means that the index of our first filter is 1, our second filter is 2 and so on. So, in order to create an index for our list of filters we just create a new variable, rename it `filter_index` or something similar, and initialise it with a starting value of 0.
+If we combine the `select list item` block with our new filter index we can select any one of our three filters. 
+
+![filter index](img/filter_index1.png)
+
+
+### Incrementers
+
+In the previous example if we want to go from one filter to the next we add 1 to our filter index. Similarly, if we want to go backwards through the list we have to subtract 1 from the filter index. This is a common pattern in programming known as an incrementer. For our Thunkchat app, swiping left will add 1 for our filter index and swiping right will subtract one. 
+
+![working filters](img/filter_final.png)
+
+Take you time to go through the blocks and understand them. Each event throws up a number of possibilities so we have to take all of these things into consideration to make sure our app doesn't crash. One thing we do is check to see if we've run out of filters from our lists. If the filter index has got too big, we reset it to 0, and if the filter index has gone below 1 we loop back to the end of the list using `length of list(filterIndex)`. Aside from that, it's really just a combination of everything we've already done in this section.
+
+
+## 5. Geofilters
+
+Now that we're comfortable with using the canvas, let's try a few sensors. In order to add location awareness and time-sensing capabilities to Thunkchat we're going to add a clock and a location sensor to our existing components. Here's what the updated component list should look like:
 ![components](img/comp_thunkchat2.png)
 
-## 6. Timestamp
+According to Snapchat:
 
-## 7. Disappearing Images
+>Geofilters are special overlays that communicate the “where and when” of a Snap in a fun way, whether you're sending it to a friend or adding it to your Story.
+
+In Thunkchat we're going to show the time and location on the screen - even though the aesthetic will be a lot simpler, the functionality will be almost identical.
+
+### Display the time
+
+### Show the location
+
+
 
 
 
