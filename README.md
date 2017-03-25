@@ -1,6 +1,9 @@
 # The Evolution of Chat
 
-This book guides you step-by-step through all the step necessary to create your own chat applications. 
+![android evolution](img/evolution.png)
+<!-- http://www.bonkersworld.net/robot-evolution/ -->
+
+This book guides you step-by-step through the evolution of messenging apps, from bulletin boards, to instant messaging right up to your very own Snapchat clone. As we journey from the earliest and most primative communication apps to the newest and shiniest we'll learn the how's and why's of app development.
 
 ## Standing on the Shoulders of Giants
 
@@ -12,4 +15,4 @@ In much the same way, our ability to make video calls and send snaps to almost a
 
 ## Assumptions
 
-This books assumes that you have a GSuite (formerly Google apps) account already, and that you know how to sign into Thunkable and create an app. If you haven't made it that far yet, check out the appendices.
+This books assumes that you have a GSuite (formerly Google apps) account already, and that you know how to sign into Thunkable and create a new app. If you haven't made it that far yet, check out the appendices.
