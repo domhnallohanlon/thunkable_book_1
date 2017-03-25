@@ -145,9 +145,25 @@ In Thunkchat we're going to show the time and location on the screen - even thou
 
 ### Display the time
 
+Before we display the time on the canvas we need to figure out how to format the time. There are a number of formats you can use, for example users who prefer 24-hour format can use the pattern `HH:mm` and for 12-hour format use lower case letters, `hh:mm`. 
+
+You can use either of the following two snippets to display the time on the canvas:
+
+![default time format](img/format_time.png)
+![custom time format](img/format_time_custom.png)
+
+
 ### Show the location
 
+Within the location sensor you can access the latitude and longitude values for your current location as well as being able to tell you your current address. The `current address` block tells you the street name, town name, city name, and postcode. For this application the exact street is probably too specific for most users so we can include either town or city.
 
+![show current town](img/location_blocks.png) 
+
+In this snippet the `split text at` block uses the \n character to split the address into a list, where each element of the list corresponds to a line of the current address. For example, setting the index = 2 gives the current town, but if we use index = 3 the user should see the current city.
+
+## Tidying it all up.
+
+Now that we have it all working as we'd expect we can tidy the whole thing up by using a few ImageSprites. Doing this allows us to fill the entire screen with the canvas and lends itself to a better overall user experience. 
 
 
 

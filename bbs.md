@@ -22,34 +22,35 @@ The design for this app is really simple. You just need three components; a labe
 
 ![Drag and Drop](img/get_and_set.gif)
 
-It **is** possible to rename your components, and for larger apps I would strongly recommend that you do so, but for now we will have three components on Screen1 with their default names. 
+It **is** possible to rename components, and for larger apps I strongly recommend doing this, but for now we will have three components on Screen1 with their default names. The option to rename components is at the bottom of the component view, right next to the delete button.
 
 ![Get and Set Design](img/comp_get_and_set.png)
 
-And you app will, initially, look like this:
+And your app will, initially at least, look like this:
 
 ![Design Basic](img/design_gas_basic.png)
 
-Try experimenting with the properties to make it look a bit more user friendly:
+By default, all components are aligned to the center of the screen. On the right hand side of the screen you can see the component properties. Let's change things a bit, like the fonts, backgrond colour, width and height. Try experimenting with the properties to make it look a bit more user friendly:
 ![Better Design](img/design_gas.png)
 
+If you'd like to use one of the pre-made templates just click on the button below.
 
 <button>Open This Design in Thunkable</button>
 <button>Download the .aia Template</button>
 
 ### Blocks
 
-![Get and Set Blocks](img/get_and_set_blocks1.gif)
+The code for this app is reasonably straightforward. **When** the button is clicked we **get** the text from TextBox1 and **set** it as the text in Label1. For this reason these blocks are often referred to as getters and setters. Drag and drop the blocks together and they should just snap together like puzzle pieces.
 
-The code for this app is also reasonably straightforward. **When** the button is clicked we **get** the text from TextBox1 and **set** it as the text in Label1
+![Get and Set Blocks](img/get_and_set_blocks1.gif)
 
 <!-- ![Get and Set Blocks](img/blocks_get_and_set.png) -->
 
-Once we've got this very basic app working it's time to add in some more code to make it work even better.
+Once we've got this very basic app working it's time to add in some more code to make it work even better. The pink `join` block comes from the text drawer and with a bit of practice, having colour coded blocks will be very helpful when we're trying to build more apps in the future. In our bulletin board we want to add new messages into the thread below the old messages, so we need a way to add text into a new line. In order to display these new messages on their own line we use the *\n* escape character. This behaves just as if you pressed the <kbd>Return</kbd> key on your keyboard.
 
 ![Get and Set, better!](img/get_and_set_blocks2.gif)
 
-When using Thunkable, you will see many blocks with a blue gear icon on them. This is known as a **mutator** because it allows you to mutate - or alter - the shape of a block. In our bulletin board we want to append new messages on to the end of old messages, in other words the new messages should be added onto the end of the existing messages. In order to display new messages on a new line we use the *\n* escape character, which behaves as if you pressed the <kbd>Return</kbd> key on your keyboard.
+When using Thunkable, you will see many blocks with a blue gear icon on them. This is known as a **mutator** because it allows you to mutate - or alter - the shape of a block. The snippet below is **not** part of our app, but it just demonstrates how mutators can be used to change the shape of some blocks, so be on the look out for them!
 
 ![mutators](img/mutator.gif)
 
@@ -57,7 +58,7 @@ Finally, we can improve the overall user experience (UX) of this app by clearing
 
 ![First Improvment](img/blocks_gas_better.png)
 
-The blue question marks that you see on the blocks here are called **comments**. These are notes that the programmer writes to explain what a certain block, or group of blocks, should do. Try right-clicking on a block now and adding in some comments of your own.
+The blue question marks that you see on the blocks here are called **comments**. These are notes that the programmer writes to explain what a certain block, or group of blocks, should do. If you're using any of the templates you will find some comments to help you out. Try right-clicking on a block now and adding in some comments of your own.
 
 ### What's Happening?
 
@@ -86,10 +87,23 @@ TinyWebDB will work fine right out of the box, but be aware that you will need t
 
 ### What's Happening?
 
+The first thing we want to do is store the text from the label in Tiny_Web_DB1. We can store any type of variable in the database, like text, numbers and even lists, but we need a way to keep track of all this. Tags are used like headers, or titles, to keep everything organised. I've used the tag "app_development" here but you can use anything you like really.
 ![Store Value](img/store_value.gif)
+<hr>
+
+Once the text is successfully stored in the database we want to display the new value on the screen for the user to see the updated conversation. The first step of this is handling what happens when the ValueStored event is triggerd. In this snippet we just ask database for the data with the `get value` block.  
 ![When Value Stored](img/when_value_stored.gif)
+<hr>
+
+Now that we have the new value we can display it in the label. In the next snippet, the `Got Value` event returns two variables for us to use. The `tagFromWebDB` will just be "app_development" or whatever tag you have decided to use, so we're only interested in the `valueFromWebDB` varaible. You will see lots of blocks with variables like this, all you have to do is hover  the mouse over the variable name to show the drop-down menu with the getter and setter.
 ![When Got Value](img/when_got_value.gif)
+<hr>
+
+All our messages are stored online, but they aren't displayed until the user types in a new message, what we need now is to make the messages show up when the app is opened. To make something happen when the screen loads we use the `Screen1.initialize` block. Any blocks stored here will run when the app starts.  
 ![Screen Init](img/when_screen_initialize.gif)
+<hr>
+
+Finally, everytime the user refreshes the app we want the thread to update everytime the user clicks on a refresh button. To get Button2, we go back to the Designer view and add a second button from the user interface palette. Once the `Button2.click` event is added we can duplicate the `Tiny_Web_DB1.getValue` block for a third and final time. 
 ![Button Clicked](img/btn_get_value.gif)
 
 
@@ -102,12 +116,12 @@ Now that you have the ability to capture text input and you're familiar with the
 
 In this chapter we've learned about:
 
-Variables - data which can change
-Getters - for getting, or reading, a value from a variable
-Setters - for setting, or writing, a value to a variable.
-Mutator - for changing the shape of a block
-Comments - leaving notes for other humans
-Strings - pieces of text
+Variables - data which can change  
+Getters - for getting, or reading, a value from a variable  
+Setters - for setting, or writing, a value to a variable.  
+Mutator - for changing the shape of a block  
+Comments - leaving notes for other humans  
+Strings - pieces of text  
 
 ## Up Next
 
