@@ -79,18 +79,38 @@ HTML is the language of the web, every day billions of web pages are displayed i
 In HTML, content that you want to display on screen is "marked-up" using a series of HTML tags. Some Thunkable components, such as the label, also support HTML tags; try out the following code for yourself:
 
 <!-- change to Button1 -->
-![html intro](img/html_intro.png)
+![html intro](img/tim_s2b2.png)
 
-This piece of code displays the speakers name in red and bold text, followed by their message which is displayed normally. 
+This piece of code displays the speakers name in blue and bold text, followed by their message which is displayed as plain text. 
 We also store the *text* from label1 in our Firebase, using the tag "myChat". This is important to recognise because it only stores the text, and **not** any of the HTML data we have added. This means that users on other devices will see the correct information, but the colours and fonts will not be as we intended them.
-In order to display the conversation as we, the developer, intended it for all users, we will have to write the raw HTML to a string variable and then save the string in Firebase. This gives us something like the following:
+In order to display the conversation as we, the developer, intended it for all users, we will have to can write the raw HTML to a string variable and then save the string in Firebase, or we could just join together the all the HTML tags in one `Join` block. This gives us something like the following:
 
 <!-- store html -->
-<!-- display html from firebase -->
+![img](img/tim_s2b3.png)
+
 
 ### 4. Procedures
 
-This
+In the previous code we have created a join block and then duplicated it to display the HTML in the label and store it in our Firebase at the too. It is generally considered bad practice to have repetition like this in your code, and you will often hear about DRY programming, or **D**on't **R**epeat **Y**ourself.
+
+This is a excellent opportunity to learn a bit about procedures.
+
+A procedure is a set of instructions that are followed in a specific order and which can be reused over and over again. If, for example, you were baking cookie would would have to weigh the ingredients, then mix them and finally bake them. A procedure is just like a recipe for your app. The instructions are always following in the precise order you define them, and anyone following your recipe should always end up with the same result. 
+
+In the next example we create a procedure called "generateHTML". In the procedure we change the text colour from blue to green and then call the procedure to display the contents in the label and call it again to store html in Firebase.
+
+![img](img/tim_s2b4.png)
+
+Finally, to illustrate the different types of procedures in Thunkable, we create a new variable called "storeHTML". This procedure generates HTML formatted text and joins it on to our conversation.
+
+![img](img/tim_s2b5.png)
+
+
+If you want a wider selection of colours to choose from than just pre-defined colours like "red" or "green" you can get more choice (a lot more choice!) by specifying a hexadecimal colour code instead. We can make the text teal by using the following:
+
+![img](img/tim_s2b6.png)
+
+To understand more about hex, and how colours are represented in code read on!
 
 ### 5. Colours
 
