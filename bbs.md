@@ -33,12 +33,15 @@ And your app will, initially at least, look like this:
 By default, all components are aligned to the center of the screen. On the right hand side of the screen you can see the component properties. Let's change things a bit, like the fonts, backgrond colour, width and height. Try experimenting with the properties to make it look a bit more user friendly:
 ![Better Design](img/design_gas.png)
 
-If you'd like to use one of the pre-made templates just click on the button below.
+If you'd like to use one of the pre-made templates just click on the buttons below.
 
 <!-- <button>Open Design in Thunkable</button>
  -->
 <a href="https://github.com/domhnallohanlon/thunkable_book_1/blob/master/aia/thunka_boards_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
 	Download the .aia Template.
+</a>
+<a href="http://app.thunkable.com/?repo=raw.githubusercontent.com/domhnallohanlon/thunkable_book_1/master/aia/thunka_boards_template.asc" class="flat_btn" target="_blank">
+	<i class="fa fa-code-fork"></i> Open in Thunkable
 </a>
 
 

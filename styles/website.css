@@ -74,6 +74,7 @@ a.flat_btn {
 }
 a.flat_btn:focus {
   outline: none
+  text-decoration:none;
 }
 a.flat_btn {
   color: #fff;
@@ -92,4 +93,9 @@ a.flat_btn.active {
   background-color: #00695C;
   text-shadow: -1px 1px #193047;
   text-decoration: none;
+}
+
+a.flat_btn:visited,
+a.flat_btn.visited{
+	text-decoration: none;
 }
