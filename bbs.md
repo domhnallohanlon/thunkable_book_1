@@ -35,8 +35,12 @@ By default, all components are aligned to the center of the screen. On the right
 
 If you'd like to use one of the pre-made templates just click on the button below.
 
-<button>Open This Design in Thunkable</button>
-<button>Download the .aia Template</button>
+<!-- <button>Open Design in Thunkable</button>
+ -->
+<a href="aia/thunka_boards_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
+	Download the .aia Template.
+</a>
+
 
 ### Blocks
 

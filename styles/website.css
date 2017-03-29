@@ -1,3 +1,5 @@
+
+
 .block{
   border: 1px solid #a9a9a9;
   padding-left: 4px;
@@ -47,4 +49,46 @@
 
 .setter{
 	background-color: #286543;
+}
+
+
+a.flat_btn {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  /*font-family: "Bitter",serif;*/
+  line-height: 1.8;
+  vertical-align: bottom;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+a.flat_btn:focus {
+  outline: none
+}
+a.flat_btn {
+  color: #fff;
+  background-color: #26A69A;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+}
+a.flat_btn:hover,
+a.flat_btn.hover {
+  background-color: #00897B;
+  text-shadow: -1px 1px #27496d;
+  text-decoration: none;
+}
+a.flat_btn:active,
+a.flat_btn.active {
+  background-color: #00695C;
+  text-shadow: -1px 1px #193047;
+  text-decoration: none;
 }
