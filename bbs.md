@@ -37,7 +37,7 @@ If you'd like to use one of the pre-made templates just click on the button belo
 
 <!-- <button>Open Design in Thunkable</button>
  -->
-<a href="aia/thunka_boards_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
+<a href="https://github.com/domhnallohanlon/thunkable_book_1/blob/master/aia/thunka_boards_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
 	Download the .aia Template.
 </a>
 
