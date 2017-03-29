@@ -1,8 +1,8 @@
 # AOL Instant Messenger
 
-AOL launched their instant messenger in 1997 and it changed messenging for an entire generation. It dominated the IM market in North American, with millions choosing AIM over  alternatives such as ICQ or MSM. If you're too young to remember these pieces of software then do a quick search or check them out on YouTube.
+The second app we're going to buid will be **T**hunkable **I**nstant **M**essenger, or TIM for short. This app will be based on the 90s instant messaging phenomenon - AIM.
 
-The second app we're going to buid will be **T**hunkable **I**nstant **M**essenger, or TIM for short.
+AOL launched their instant messenger in 1997 and it changed messenging for an entire generation. It dominated the IM market in North America, with millions choosing AIM over  alternatives such as ICQ or MSM. If you're too young to remember these pieces of software then do a quick search or check them out on YouTube.
 
 ![TIM Logo](img/tim.png)
 
@@ -23,10 +23,10 @@ All the components for the design of Screen1 come from the User Interface palett
 
 ## Screen1 Blocks
 
-The scenario here is not supposed to provide a high level of encryptyion or security, but just to show how to send data between two screens. In this first snippet we see a global variable used to store our password and then, when the button is pressed, check if the user has typed the correct password in the PasswordTextBox. If the passwords match then we open "Screen2" and pass the username from the TextBox, as the `start value` to Screen2.  
+The scenario here is not supposed to provide a high level of encryptyion or security, but rather to show how data can be sent between two screens. In this first snippet we see a global variable used to store our password. When the button is pressed we check whether the user has typed the correct password in the PasswordTextBox. If the passwords match then we open "Screen2" and pass the username from the TextBox, as the <span class="block control">start value</span> to Screen2.  
 ![Blocks](img/tim_s1b1.png)
 
-In the first example we're making the assumption that the user always knows the correct password, or that the user never makes mistakes - both of which are dangerous assumption to make! To improve the UX we'll use the notifer component to let them know if they ever get the password wrong. Just like the `join` block in our first app the `if` block also has a mutator that we can use to add in additional test conditions. In this app the password is either right or wrong so we only need if and else.  
+In the first example we're making the assumption that the user always knows the correct password, or that the user never makes mistakes - both of which are dangerous assumptions to make! To improve the UX we'll use the notifer component to create a pop-up if they ever get the password wrong. Just like the <span class="block text">join</span> block in our first app, the <span class="block control">if</span> block also has a mutator that we can use to add additional test conditions. In this app the password is either right or wrong so we only need if and else.  
 ![Better Blocks](img/tim_s1b2.png)
 
 That's it really for Screen1, we've learned about opening new screens, using start values and if-then-else in quick succession so this might be a good opportunity to go back and re-read what we've just covered before moving on to the next screen.
@@ -42,7 +42,7 @@ This minimal design is very similar to Thunkaboards, but we take greater care wi
 
 ## Screen2 Blocks
 
-The blocks are a little more complex than the previous app as we need a bit more background knowledge to fully understand everything. We'll learn a little bit about how computers display colours and how to represent data using  HTML. In order to get everything working we need to break all of these requirements into a set of smaller, simpler sub-tasks to do. The whole point of this app is to transmit messages instantly, so we'll start there, but there are several points to cover so we'll outline them here:
+The blocks are a little more complex than the previous app and we need a bit more background knowledge to fully understand everything. We'll learn a little bit about how computers display colours and how to represent data using  HTML. In order to get everything working we need to break all of these requirements into smaller, simpler sub-tasks. The whole point of this app is to transmit messages instantly, so we'll start there, but there are several points to cover so here's a quick overview:
 
 1. Greet the user by name
 2. Send data with Firebase
@@ -52,7 +52,7 @@ The blocks are a little more complex than the previous app as we need a bit more
 
 ### 1. Greet the User by Name
 
-Recall that on Screen1 we sent the username as a start value to Screen2. To start off we will get that username and personalise the title bar with thier name. You can find the `get start value` block in the Control palette.
+Recall that on Screen1 we sent the username as a start value to Screen2. To start off we will get that username and personalise the title bar with thier name. You can find the <span class="block control">get start value</span> block in the Control palette.
 
 ![also](img/tim_s2b1.png)
 
@@ -60,12 +60,12 @@ Recall that on Screen1 we sent the username as a start value to Screen2. To star
 
 The most techincally demanding aspect of this entire project is handled by the Firebase component. Since being acquired by Google in 2015, Firebase has exploded in popularity. With nothing more than a Google account (GMail, G Suite etc.) you can create powerful, fast and reliable databases with just a few clicks. 
 
-As with the TinyWebDB in our first app, we use tags to identify different collections of data. When our app loads we want to get all the data associated with that tag or, if it's the first time that the app have ever been used, use a fallback in case the tag is not there yet. As soon as firebase replies to the `Get Value` request the `FirebaseDB1.Got Value` is triggered. Here we display the value in our label.
+As with the TinyWebDB in our first app, we use tags to identify different collections of data. When our app loads we want to get all the data associated with that tag or, if it's the first time that the app have ever been used, use a fallback in case the tag is not there yet. As soon as firebase replies to the <span class="block procedure">Get Value </span> request the <span class="block control">FirebaseDB1.Got Value</span> is triggered. Here we display the value in our label.
 
 <!-- update this to Screen2 -->
 ![starting off](img/firebase_initialize.png)
 
-An incredible thing happens with the `FirebaseDB1.Data Changed` event. If *anyone* uploads data to our firebase, then the data changed event is fired **for all users** of the app..."automagically!" This is basically a better version of our previous app, made possible thanks to improved technology. 
+An incredible thing happens with the <span class="block control">FirebaseDB1.Data Changed</span> event. If *anyone* uploads data to our firebase, then the data changed event is fired **for all users** of the app..."automagically!" This is basically a better version of our previous app, made possible thanks to improved technology. 
 
 ![real time](img/firebase_data_changed.png)
 
@@ -83,7 +83,7 @@ In HTML, content that you want to display on screen is "marked-up" using a serie
 
 This piece of code displays the speakers name in blue and bold text, followed by their message which is displayed as plain text. 
 We also store the *text* from label1 in our Firebase, using the tag "myChat". This is important to recognise because it only stores the text, and **not** any of the HTML data we have added. This means that users on other devices will see the correct information, but the colours and fonts will not be as we intended them.
-In order to display the conversation as we, the developer, intended it for all users, we will have to can write the raw HTML to a string variable and then save the string in Firebase, or we could just join together the all the HTML tags in one `Join` block. This gives us something like the following:
+In order to display the conversation as we, the developer, intended it for all users, we will have to can write the raw HTML to a string variable and then save the string in Firebase, or we could just join together the all the HTML tags in one <span class="block text">join</span> block. This gives us something like the following:
 
 <!-- store html -->
 ![img](img/tim_s2b3.png)
@@ -133,10 +133,19 @@ In the following snippet, colour values are copied from [materialui.co](http://m
 
 ![hex to thunkable](img/paste_hex2.gif)
 
-
+<!-- 
 ## Chat Bot
-
+ -->
 ## Recap
 
 In this chapter we've learned about:
 
+Procedures - like a recipe, procedures run the same code, in the same order
+
+Start Values
+
+HTML
+
+RGB and RGBa Values
+
+Hexadecimal Colour Values

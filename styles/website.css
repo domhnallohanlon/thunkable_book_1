@@ -1,0 +1,50 @@
+.block{
+  border: 1px solid #a9a9a9;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 10pt;
+  white-space: nowrap;
+  color:white;
+}
+
+.control{
+  background-color: #CFAD4C;
+}
+
+.logic{
+	background-color: #88b653;
+}
+
+.math{
+	background-color: #4f86bf;
+}
+
+.text{
+	background-color: #c24571;
+}
+
+.list{
+	background-color: #58b6dc;
+}
+
+.color{
+	background-color: #909090;
+}
+
+.variable{
+	background-color: #db743a;
+}
+
+.procedure{
+	background-color: #8f6a96;
+}
+
+.getter{
+	background-color: #439a70;
+}
+
+.setter{
+	background-color: #286543;
+}

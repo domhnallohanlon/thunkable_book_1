@@ -40,13 +40,15 @@ If you'd like to use one of the pre-made templates just click on the button belo
 
 ### Blocks
 
-The code for this app is reasonably straightforward. **When** the button is clicked we **get** the text from TextBox1 and **set** it as the text in Label1. For this reason these blocks are often referred to as getters and setters. Drag and drop the blocks together and they should just snap together like puzzle pieces.
+The code for this app is reasonably straightforward. The block <span class="block control">When Button1.Click</span> is what we call an event handler - it is waiting to a particular event to happen. In this case, **When** the button is clicked we **get** the text from TextBox1 with the <span class="block getter">Textbox1.text</span> block and then **set** it as the text in Label1 using the <span class="block setter">set Label1.text</span> block. For this reason these blocks are often referred to as getters and setters. As we drag and drop the blocks together they snap together like puzzle pieces - simples!
 
 ![Get and Set Blocks](img/get_and_set_blocks1.gif)
 
 <!-- ![Get and Set Blocks](img/blocks_get_and_set.png) -->
 
-Once we've got this very basic app working it's time to add in some more code to make it work even better. The pink `join` block comes from the text drawer and with a bit of practice, having colour coded blocks will be very helpful when we're trying to build more apps in the future. In our bulletin board we want to add new messages into the thread below the old messages, so we need a way to add text into a new line. In order to display these new messages on their own line we use the *\n* escape character. This behaves just as if you pressed the <kbd>Return</kbd> key on your keyboard.
+Once we've got this very basic app working it's time to add in some more code to make it work even better. The pink <span class="block text">join</span> block comes from the text drawer. With a bit of practice, having colour coded blocks will be very helpful when we're following along with future tutorials. 
+
+In our bulletin board we want to add new messages into the thread below the old messages, so we need a way to add text into a new line. In order to display these new messages on their own line we use the *\n* escape character. This behaves just as if you pressed the <kbd>Return</kbd> key on your keyboard.
 
 ![Get and Set, better!](img/get_and_set_blocks2.gif)
 
@@ -66,8 +68,8 @@ When anything happens on your phone, from pressing a button up to recieving a ph
 
 ![Key Idea: Events](img/key_event.png)
 
-In our app, any time that the button is pressed the **When Button1.Click** event happens. The code inside the event then happens in order, starting at the top and working its way downwards. 
-First the label is changed to show the new message. The dark green set block is known as a **setter** because it allows us to write, or set, new data in place of old. In our app we are replacing the old text in Label1 with new text which we get from TextBox1. The light green *TextBox1.Text* and *Label1.text* blocks are known as **getters** because the allow us to read - or get - data from a component.
+In our app, any time that the button is pressed the <span class="block control">When Button1.Click</span> event happens. The code inside the event then happens in order, starting at the top and working its way downwards. 
+First the label is changed to show the new message. The dark green <span class="block setter">set Label1.text</span> block is known as a **setter** because it allows us to write, or set, new data in place of old. In our app we are replacing the old text in Label1 with new text which we get from TextBox1. The light green <span class="block getter">TextBox1.Text</span> and <span class="block getter">Label1.text</span> blocks are known as **getters** because the allow us to read - or get - data from a component.
 
 ## 2. Upload the Text
 
@@ -87,23 +89,23 @@ TinyWebDB will work fine right out of the box, but be aware that you will need t
 
 ### What's Happening?
 
-The first thing we want to do is store the text from the label in Tiny_Web_DB1. We can store any type of variable in the database, like text, numbers and even lists, but we need a way to keep track of all this. Tags are used like headers, or titles, to keep everything organised. I've used the tag "app_development" here but you can use anything you like really.
+The first thing we want to do is use the <span class="block procedure">Tiny_Web_DB1.Store Value</span> block to save the text from the label to the database. We can store any type of variable in the database, like text, numbers and even lists, but we need a way to keep track of all this. Tags are used like headers, or titles, to keep everything organised. I've used the tag "app_development" here but you can use anything you like really.
 ![Store Value](img/store_value.gif)
 <hr>
 
-Once the text is successfully stored in the database we want to display the new value on the screen for the user to see the updated conversation. The first step of this is handling what happens when the ValueStored event is triggerd. In this snippet we just ask database for the data with the `get value` block.  
+Once the text is successfully stored in the database we want to display the new value on the screen for the user to see the updated conversation. The first step of this is handling what happens when the ValueStored event is triggerd. In this snippet we just ask database for the data by using the <span class="block procedure">Tiny_Web_DB1.Get Value</span> block.  
 ![When Value Stored](img/when_value_stored.gif)
 <hr>
 
-Now that we have the new value we can display it in the label. In the next snippet, the `Got Value` event returns two variables for us to use. The `tagFromWebDB` will just be "app_development" or whatever tag you have decided to use, so we're only interested in the `valueFromWebDB` varaible. You will see lots of blocks with variables like this, all you have to do is hover  the mouse over the variable name to show the drop-down menu with the getter and setter.
+Now that we have the new value we can display it in the label. In the next snippet, the <span class="block control">Got Value</span> event returns two variables for us to use. The <span class="block variable">tagFromWebDB</span> will just be "app_development" or whatever tag you have decided to use, so we're only interested in the <span class="block variable">valueFromWebDB</span> varaible. You will see lots of blocks with variables like this, all you have to do is hover  the mouse over the variable name to show the drop-down menu with the getter and setter.
 ![When Got Value](img/when_got_value.gif)
 <hr>
 
-All our messages are stored online, but they aren't displayed until the user types in a new message, what we need now is to make the messages show up when the app is opened. To make something happen when the screen loads we use the `Screen1.initialize` block. Any blocks stored here will run when the app starts.  
+All our messages are stored online, but they aren't displayed until the user types in a new message, what we need now is to make the messages show up when the app is opened. To make something happen when the screen loads we use the <span class="block control">Screen1.Initialize</span> block. Any blocks stored here will run when the app starts.  
 ![Screen Init](img/when_screen_initialize.gif)
 <hr>
 
-Finally, everytime the user refreshes the app we want the thread to update everytime the user clicks on a refresh button. To get Button2, we go back to the Designer view and add a second button from the user interface palette. Once the `Button2.click` event is added we can duplicate the `Tiny_Web_DB1.getValue` block for a third and final time. 
+Finally, everytime the user refreshes the app we want the thread to update everytime the user clicks on a refresh button. To get Button2, we go back to the Designer view and add a second button from the user interface palette. Once the <span class="block control">Button2.Click</span> event is added we can duplicate the <span class="block procedure">Tiny_Web_DB1.Get Value</span> block for a third and final time. 
 ![Button Clicked](img/btn_get_value.gif)
 
 
