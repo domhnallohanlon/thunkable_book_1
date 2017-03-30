@@ -18,7 +18,7 @@ We'll start with a simple prototype, and then add more components as we go when 
 
 ![components](img/comp_thunkchat.png)
 
-Taking a photo and displaying it on the screen is actually really easy. First of all, the button click event calls the `Camera1.Take Picture` method. This in turn opens the camera and lets the use take a photograph. Once the user has taken a picture this raises the `Camera1.After Picture` event. This event contains an `image` variable, which tells us the path to where the photo is stored on the phone. 
+Taking a photo and displaying it on the screen is actually really easy. First of all, the button click event calls the <span class="block procedure">Camera1.Take Picture </span>method. This in turn opens the camera and lets the use take a photograph. Once the user has taken a picture this raises the <span class="block control">Camera1.After Picture</span> event. This event contains an <span class="block variable">image</span> variable, which tells us the path to where the photo is stored on the phone. 
 
 ![take photo](img/blocks_take_photo.png)
 
@@ -34,11 +34,11 @@ The canavs component gives us the option to change a wide variety of properties,
 
 ## 3. Add Text
 
-For our next feature we'll let the user add text to their image by tapping on the screen. We could do this with a TextBox, but a better option is to use a `Text Dialog`. 
+For our next feature we'll let the user add text to their image by tapping on the screen. We could do this with a TextBox, but a better option is to use <span class="block procedure">Notifier1.Show Text Dialog</span>. 
 
 ![text positioning done wrong](img/blocks_text_wrong.png)
 
-In the block above, we've successfully positioned the text in the middle of the screen, by dividing the canvas width by two. Unfortunately, we can not use the y value from the `Canvas1.touched` event because, while it is a variable, is is a local variable and not a global variable. Local variables, like `x`, `y` and `touchedAnySprite` can only be used by the events or procedures that create them, whereas global variables can be used by any blocks of code on the screen. In the code below, we've fixed the problem by creating a global variable called `text_position`
+In the block above, we've successfully positioned the text in the middle of the screen, by dividing the canvas width by two. Unfortunately, we can not use the y value from the <span class="block control">Canvas1.Touched</span> event because, while it is a variable, is is a local variable and not a global variable. Local variables, like <span class="block variable">x</span>, <span class="block variable">y</span> and <span class="block variable">touchedAnySprite</span> can only be used by the events or procedures that create them, whereas global variables can be used by any blocks of code on the screen. In the code below, we've fixed the problem by creating a global variable called <span class="block variable">text_position</span>
 
 ![text positioning - better](img/blocks_text_variable.png)
 
@@ -52,13 +52,13 @@ First, we create a semi-transparent paint colour for the background;
 
 Next, we change the line width to be 50% taller than the text;
 
-After that the line is drawn, the `Text_Position - 3` actually has the effect of moving the background up the screen, as y = 0 at the very top of the screen;
+After that the line is drawn, the <span class="block math">&nbsp;</span><span class="block variable">Text_Position</span><span class="block math"> - 3</span> actually has the effect of moving the background up the screen, as y = 0 at the very top of the screen;
 
-Next then, the paint colour is changed a second time, so that the text can be printed in white;
+Next then, the paint colour is changed a second time, so that the text can be printed in white.
 
 Now the text is displayed, just like we did in the previous example;
 
-Finally, the `Canvas1.PaintColor` is changed back to the original colour so that the doodle function works as expected.
+Finally, the <span class="block setter">Canvas1.PaintColor</span> is changed back to the original colour so that the doodle function works as expected.
 
 
 ## 4. Filter
@@ -80,13 +80,13 @@ Now that we have one filter working we need to add some more. One way to do this
 
 To take the guesswork out of colour picking I've used the [material design reference guide](https://material.io/guidelines/style/color.html) by Google. I then did a Google search for the hex values of the colours I wanted and voila! RGB values for using in our app.
 
-![hex to rbg](img/hex_to_rgb.gif)
+![hex to rbg](img/paste_hex2.gif)
 
 ### Lists
 
 Lists are integral components to almost all computer programs. A list is simply a collection of data, or variables, and sometimes you might see people referring to lists as "arrays" - which is just another word for a collection. 
 
-Since we have a collection of filter colours that we want to use in our app this is an ideal time to learn how to use lists. The best practice is to create an empty list first, an then add items to the list when the app loads. 
+Since we have a collection of filter colours that we want to use in our app this is an ideal time to learn how to use lists. The best practice is to use <span class="block list">create empty list</span> first, attaching this to a variable, and then when the app loads use the <span class="block list">add items to list</span> . 
 
 Using the mutator you can add as many filter colours as you like.
 
@@ -95,13 +95,13 @@ Using the mutator you can add as many filter colours as you like.
 
 ### Swipe Left and Right
 
-To swipe between filters we're going to use the heading property of the `Canvas1.flung` event. The heading tells us what direction the screen was swiped, but how exactly does your phone represent these directions? To better understand what happens when user swipes their finger across the screen we can make a test app. 
+To swipe between filters we're going to use the heading property of the <span class="block control">Canvas1.Flung</span> event. The heading tells us what direction the screen was swiped, but how exactly does your phone represent these directions? To better understand what happens when user swipes their finger across the screen we can make a test app. 
 
 ![heading on screen](img/headings_app.gif)
 
-Making test apps like this is a good idea for any new feature that you want to better understand. Build an app that lets you visualise how the data change as new events occur. In this case I've displayed the results via the `set Screen1.title` property, but you could just as easily use a label or notifier if you like. 
+Making test apps like this is a good idea for any new feature that you want to better understand. Build an app that lets you visualise how the data change as new events occur. In this case I've displayed the results via the <span class="block setter">set Screen1.Title</span> property, but you could just as easily use a label or notifier if you like. 
 
-Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0, although we have to take into account the positive and negative signs.
+Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. If you've ever done any co-ordinate geometry will make sense, since swiping upwards creates a line with a positive slope while swiping downwards draws a line with a negative slope. Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0, although we have to take into account the positive and negative signs.
 
 To my mind, the range of values can be visualised like this:
 
@@ -117,8 +117,8 @@ In the test app we now use the notifer to give a short alert of which direction 
 
 ### List Index
 
-Now that we have our list of filter colours, and the ability to track left and right swipes we need to keep track of which filter we are on. To do this we need to understand a litte bit about list indexes. The index a list is just the numeric position of each item in the list. In many programming langauges it is customary to start counting at 0 however in Thunkable, and other Blockly-based software, we start counting from 1. This means that the index of our first filter is 1, our second filter is 2 and so on. So, in order to create an index for our list of filters we just create a new variable, rename it `filter_index` or something similar, and initialise it with a starting value of 0.
-If we combine the `select list item` block with our new filter index we can select any one of our three filters. 
+Now that we have our list of filter colours, and the ability to track left and right swipes we need to keep track of which filter we are on. To do this we need to understand a litte bit about list indexes. The index a list is just the numeric position of each item in the list. In many programming langauges it is customary to start counting at 0 however in Thunkable, and other Blockly-based software, we start counting from 1. This means that the index of our first filter is 1, our second filter is 2 and so on. So, in order to create an index for our list of filters we just create a new variable, rename it <span class="block variable">filter_index</span> or something similar, and initialise it with a starting value of 0.
+If we combine the <span class="block list">select list item</span> block with our new filter index we can select any one of our three filters. 
 
 ![filter index](img/filter_index1.png)
 
@@ -129,7 +129,7 @@ In the previous example if we want to go from one filter to the next we add 1 to
 
 ![working filters](img/filter_final.png)
 
-Take you time to go through the blocks and understand them. Each event throws up a number of possibilities so we have to take all of these things into consideration to make sure our app doesn't crash. One thing we do is check to see if we've run out of filters from our lists. If the filter index has got too big, we reset it to 0, and if the filter index has gone below 1 we loop back to the end of the list using `length of list(filterIndex)`. Aside from that, it's really just a combination of everything we've already done in this section.
+Take you time to go through the blocks and understand them. Each event throws up a number of possibilities so we have to take all of these things into consideration to make sure our app doesn't crash. One thing we do is check to see if we've run out of filters from our lists. If the filter index has got too big, we reset it to 0, and if the filter index has gone below 1 we loop back to the end of the list using <span class="block list">length of list</span><span class="block variable">global listOfFilters</span> Aside from that, it's really just a combination of everything we've already done in this section.
 
 
 ## 5. Geofilters
@@ -145,7 +145,7 @@ In Thunkchat we're going to show the time and location on the screen - even thou
 
 ### Display the time
 
-Before we display the time on the canvas we need to figure out how to format the time. There are a number of formats you can use, for example users who prefer 24-hour format can use the pattern `HH:mm` and for 12-hour format use lower case letters, `hh:mm`. 
+Before we display the time on the canvas we need to figure out how to format the time. There are a number of formats you can use, for example users who prefer 24-hour format can use the pattern <span class="block text">HH:mm</span> and for 12-hour format use lower case letters, <span class="block text">hh:mm</span>. 
 
 You can use either of the following two snippets to display the time on the canvas:
 
@@ -155,11 +155,11 @@ You can use either of the following two snippets to display the time on the canv
 
 ### Show the location
 
-Within the location sensor you can access the latitude and longitude values for your current location as well as being able to tell you your current address. The `current address` block tells you the street name, town name, city name, and postcode. For this application the exact street is probably too specific for most users so we can include either town or city.
+Within the location sensor you can access the latitude and longitude values for your current location as well as being able to tell you your current address. The <span class="block getter">Location_Sensor1.Current Address</span> block tells you the street name, town name, city name, and postcode. For this application the exact street is probably too specific for most users so we can include either town or city.
 
 ![show current town](img/location_blocks.png) 
 
-In this snippet the `split text at` block uses the \n character to split the address into a list, where each element of the list corresponds to a line of the current address. For example, setting the index = 2 gives the current town, but if we use index = 3 the user should see the current city.
+In this snippet the <span class="block text">split text at</span> block uses the \n character to split the address into a list, where each element of the list corresponds to a line of the current address. For example, setting the index = 2 gives the current town, but if we use index = 3 the user should see the current city.
 
 ## Tidying it all up.
 

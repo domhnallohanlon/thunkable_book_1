@@ -13,6 +13,13 @@ The user interface is simple, and deliberately so. In essence all we need is a l
 ## What You'll Be Building
 In this app we'll learn how to add aditional screens, and how to pass information between screens. On the first screen we'll show the user a basic log in screen, while on the second scree we'll be creating a peer-to-peer chat app that highlights who is speaking with colourful usernames and which updates in real time.
 
+<a href="https://github.com/domhnallohanlon/thunkable_book_1/blob/master/aia/TIM_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
+	Download the .aia Template.
+</a>
+<a href="http://app.thunkable.com/?repo=raw.githubusercontent.com/domhnallohanlon/thunkable_book_1/master/aia/TIM_template.asc" class="flat_btn" target="_blank">
+	<i class="fa fa-clone"></i> Clone in Thunkable
+</a>
+
 ## Screen1 Design
 
 All the components for the design of Screen1 come from the User Interface palette. The TextBox and PasswordTextBox, as their names imply, are used to enter plain text and password text and we will use them to get the users name and password. When the button is pressed the app will try to sign the user in, and if they make a mistake we will use the notifier to tell them to guess again.
