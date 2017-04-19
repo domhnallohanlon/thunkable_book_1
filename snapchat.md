@@ -1,4 +1,4 @@
-# Snapchat
+# Thunkchat
 
 In September 2011, three college students - working out of their dormroom in Stanford - revolutionised the messaging world with their app, Snapchat.
 
@@ -11,6 +11,10 @@ We'll try and emulate this viral sensation by build an app which contains the fo
 3. Add text,
 4. Filter images,  
 5. Geofilters.
+
+## Community
+
+If you have any questions about this chapter feel free to ask over in the [thunkable community forum](http://community.thunkable.com/t/teoc-3-thunkchat/2775?u=domhnall)
 
 ## 1. Capture & Display Pictures
 

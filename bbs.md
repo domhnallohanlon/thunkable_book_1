@@ -12,6 +12,10 @@ As an homage to these early boards we will call our first app, Thunka-boards:
 
 ![Thunka-boards](img/Thunka-boards.png)
 
+## Community
+
+If you have any questions about this chapter feel free to ask over in the [thunkable community forum](http://community.thunkable.com/t/teoc-1-thunkaboards/2773?u=domhnall)
+
 ## 1. Display Text in a Label
 
 To get started with we'll take some text from a textbox and display it in a label.
