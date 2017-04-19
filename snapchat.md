@@ -2,9 +2,9 @@
 
 In September 2011, three college students - working out of their dormroom in Stanford - revolutionised the messaging world with their app, Snapchat.
 
-![snaptag](img/snaptag.png)
+<!-- ![snaptag](img/snaptag.png) -->
 
-The viral app contains the following adictive features:
+We'll try and emulate this viral sensation by build an app which contains the following addictive features:
 
 1. The ability to capture pictures,
 2. Draw doodles,
