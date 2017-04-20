@@ -2,4 +2,5 @@
 	{"name":"SnappyChat","subtitle":"Chat with Snaps!","description":"A simple clone of the popular messaging app. Lots of functionality missing, but provides a decent scaffolding.","thumbnail":"thumb.png","screenshot":"screenshot.png","zip":"painting.aia"},
 	{"name":"Thunkaboards", "subtitle":"Basic messaging app","description":"A BBS clone with a Thunkable twist",  "thumbnail":"thumb.png", "screenshot":"screenshot.png", "zip":"thunka_boards_template.aia"}
 	{"name":"Thunkable Instant Messenger", "subtitle":"A better messaging app","description":"Relive the AIM days with Thunkable",  "thumbnail":"thumb.png", "screenshot":"screenshot.png", "zip":"TIM_template.aia"}
+	{"name":"Thunkchat", "subtitle":"A Snapchat-style messaging app","description":"Take pictures, filter, timestamp etc",  "thumbnail":"thumb.png", "screenshot":"screenshot.png", "zip":"thunkchat_template.aia"}
 ]

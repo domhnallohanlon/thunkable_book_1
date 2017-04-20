@@ -21,10 +21,16 @@ We'll try and emulate this viral sensation by building an app which contains the
 
 ## Digital Resources
 
+<a href="https://github.com/domhnallohanlon/thunkable_book_1/blob/master/aia/thunkchat_template.aia" download class="flat_btn"><i class="fa fa-cloud-download"></i>
+	Download the .aia Template.
+</a>
+<a href="http://app.thunkable.com/?repo=raw.githubusercontent.com/domhnallohanlon/thunkable_book_1/master/aia/thunkchat_template.asc" class="flat_btn" target="_blank">
+	<i class="fa fa-clone"></i> Clone in Thunkable
+</a>
 
 ## 1. Capture & Display Pictures
 
-We'll start with a simple prototype, and then add more components as we go when we need more funcitonality. Our initial design has a big canvas for displaying images and a circular button to take the picture. To create circcular buttons you need to change the shape to `oval` and set the height and width to be the same amount, i.e. 48px width and 48px height or 32px width and 32px height.
+We'll start with a simple prototype, and then add more components when we need more funcitonality. Our initial design has a big canvas for displaying images and a circular button to take the picture. To create circular buttons you need to change the shape to `oval` and set the height and width to be the same amount, i.e. 48px width and 48px height or 32px width and 32px height.
 
 ![components](img/comp_thunkchat.png)
 
@@ -87,10 +93,13 @@ Before we begin let's do a checklist of what's required for a proof of concept:
 ![Testing the filter](img/blocks_filter_test.png)
 
 Now that we have one filter working we need to add some more. One way to do this might be with a random number generator, leaving the final filter colour up to chance, but a better way to acheieve consistent results is by creating our own list of filters and allowing the user to swipe through the filters. This will provide a more familiar user experience, while also ensuring that we get a nice selection of filter colours. 
+<!-- 
 
+TO DO: Fix this
 To take the guesswork out of colour picking I've used the [material design reference guide](https://material.io/guidelines/style/color.html) by Google. I then did a Google search for the hex values of the colours I wanted and voila! RGB values for using in our app.
 
 ![hex to rbg](img/paste_hex2.gif)
+ -->
 
 ### Lists
 
@@ -111,9 +120,10 @@ To swipe between filters we're going to use the heading property of the <span cl
 
 Making test apps like this is a good idea for any new feature that you want to better understand. Build an app that lets you visualise how the data change as new events occur. In this case I've displayed the results via the <span class="block setter">set Screen1.Title</span> property, but you could just as easily use a label or notifier if you like. 
 
-Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. If you've ever done any co-ordinate geometry will make sense, since swiping upwards creates a line with a positive slope while swiping downwards draws a line with a negative slope. Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0, although we have to take into account the positive and negative signs.
+Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. If you've ever done any co-ordinate geometry will make sense, since swiping upwards creates a line with a positive slope while swiping downwards draws a line with a negative slope. 
+Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0. To accurately detect left or right swipes we have to take into account that the heading will have either a positive or negative sign. To deal with this we can use the <span class="block math">absolute</span> block from the math category.
 
-To my mind, the range of values can be visualised like this:
+We can visualise the full range of values like this:
 
 ![headings on compass](img/headings_compass.gif)
 
@@ -125,7 +135,11 @@ In the test app we now use the notifer to give a short alert of which direction 
 
 <img src="img/heading_directions.gif" height="480px">
 
-<!-- ![heading directions](img/heading_directions.gif) -->
+Armed with this new knowledge, we can go back to **Thunkchat** and start writing code that handles left and right swipes. 
+
+![canvas flung](img/filter1a.png)
+
+The last thing we need to know about to get this fully working is list indexes.
 
 ### List Index
 
@@ -139,9 +153,35 @@ If we combine the <span class="block list">select list item</span> block with ou
 
 In the previous example if we want to go from one filter to the next we add 1 to our filter index. Similarly, if we want to go backwards through the list we have to subtract 1 from the filter index. This is a common pattern in programming known as an incrementer. For our Thunkchat app, swiping left will add 1 for our filter index and swiping right will subtract one. 
 
-![working filters](img/filter_final.png)
+![first incrementer?](img/filter2.png)
 
+Now we can subtract one from the <span class="block variable"> filter_index</span> by swiping right, and add one to it by swiping left. What happens when we run out of filters? How do we get filter number 0 when the lowest index is 1? The short answer is, we can't. If we were to test this we would cause the app to crash. Instead, each time we subtract 1 we will also check to see if we have run out of filters, and if we have we set the filter index back to the end of the list by using the <span class="block list">length of list</span> block.
+![loop backwards](img/filter3.png)
+
+What about when we swipe the other direction, can we get filter 4 if we only have three filters in our list? This will actually cause the app to crash too, so we loop back to the beginnign by setting filter index back to 1.
+
+![loop backwards](img/filter3a.png)
+
+
+The last thing to do is apply a filter for when we swipe right...
+![loop backwards](img/filter4.png)
+And we do the exact same thing when the user swipes left.
+![loop backwards](img/filter4a.png)
+
+<!-- ![working filters](img/filter_final.png)
+ -->
 Take you time to go through the blocks and understand them. Each event throws up a number of possibilities so we have to take all of these things into consideration to make sure our app doesn't crash. One thing we do is check to see if we've run out of filters from our lists. If the filter index has got too big, we reset it to 0, and if the filter index has gone below 1 we loop back to the end of the list using <span class="block list">length of list</span><span class="block variable">global listOfFilters</span> Aside from that, it's really just a combination of everything we've already done in this section.
+
+### Procedures
+
+In the previous chapter we learned about procedures. Since applying the filter involves the exact same blocks, regardless of which way we swipe, this is an ideal candidate for its own procedure. We can create a procedure called <span class="block procedure">apply_filter</span> like this:
+
+![apply filter](img/filter5.png)
+
+This makes it must easier to update our code, and improved the overall readibility. This final snippet changes the line width so that the filters interact better with the doodle functionality we created earlier.
+![apply filter](img/filter5a.png)
+
+
 
 
 ## 5. Geofilters
