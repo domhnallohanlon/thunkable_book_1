@@ -99,3 +99,51 @@ a.flat_btn:visited,
 a.flat_btn.visited{
 	text-decoration: none;
 }
+
+/*Bootstrap Material Design
+http://rosskevin.github.io/bootstrap-material-design/
+*/
+.alert{
+  padding:15px;
+  margin-bottom:.5rem;
+  border:1px solid transparent;
+  border-radius:.125rem
+}
+.alert-heading{color:inherit; margin:.25em!important;}
+
+.alert-link{font-weight:700; border-bottom: 1px dotted white}
+.alert-link:hover{text-decoration: none!important}
+
+.alert-dismissible{padding-right:35px}
+.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}
+
+.alert-success{
+    background-color:#4caf50;
+    border-color:#449d48;
+    color:#fff
+}
+.alert-success hr{border-top-color:#3d8b40}
+.alert-success .alert-link{color:#e6e6e6}
+
+.alert-info{
+  background-color:#03a9f4;
+  border-color:#0391d1;
+  color:#fff
+}
+.alert-info hr{border-top-color:#027fb8}
+.alert-info .alert-link{color:#e6e6e6}
+
+.alert-warning{
+  background-color:#ff5722;
+  border-color:#ff4409;
+  color:#fff
+  }
+.alert-warning hr{border-top-color:#ee3900}
+.alert-warning .alert-link{color:#e6e6e6}
+
+.alert-danger{
+  background-color:#f44336;
+  border-color:#f32c1e;
+  color:#fff}
+  .alert-danger hr{border-top-color:#ea1c0d}
+  .alert-danger .alert-link{color:#e6e6e6}

@@ -4,9 +4,13 @@ The second app we're going to buid will be **T**hunkable **I**nstant **M**esseng
 
 AOL launched their instant messenger in 1997 and it changed messenging for an entire generation. It dominated the IM market in North America, with millions choosing AIM over  alternatives such as ICQ or MSM. If you're too young to remember these pieces of software then do a quick search or check them out on YouTube.
 
-## Community
+<div class="alert alert-info">
+	<h3 class="alert-heading">
+	<i class="fa fa-commenting">&nbsp;</i>
+	Community</h3>
+	If you have any questions about this chapter feel free to ask over in the <a href="http://community.thunkable.com/t/teoc-2-thunkable-instant-messenger/2774?u=domhnall" class="alert-link"> Thunkable community forum</a>
+</div>
 
-If you have any questions about this chapter feel free to ask over in the [thunkable community forum](http://community.thunkable.com/t/teoc-2-thunkable-instant-messenger/2774?u=domhnall)
 
 ![TIM Logo](img/tim.png)
 

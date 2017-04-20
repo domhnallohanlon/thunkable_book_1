@@ -12,9 +12,10 @@ As an homage to these early boards we will call our first app, Thunka-boards:
 
 ![Thunka-boards](img/Thunka-boards.png)
 
-## Community
-
-If you have any questions about this chapter feel free to ask over in the [thunkable community forum](http://community.thunkable.com/t/teoc-1-thunkaboards/2773?u=domhnall)
+<div class="alert alert-info">
+<h3 class="alert-heading"><i class="fa fa-commenting">&nbsp;</i>Community</h3>
+	If you have any questions about this chapter feel free to ask over in the <a href="http://community.thunkable.com/t/teoc-1-thunkaboards/2773?u=domhnall" class="alert-link"> Thunkable community forum</a>
+</div>
 
 ## 1. Display Text in a Label
 
@@ -45,7 +46,7 @@ If you'd like to use one of the pre-made templates just click on the buttons bel
 	Download the .aia Template.
 </a>
 <a href="http://app.thunkable.com/?repo=raw.githubusercontent.com/domhnallohanlon/thunkable_book_1/master/aia/thunka_boards_template.asc" class="flat_btn" target="_blank">
-	<i class="fa fa-code-fork"></i> Open in Thunkable
+	<i class="fa fa-clone"></i> Clone in Thunkable
 </a>
 
 

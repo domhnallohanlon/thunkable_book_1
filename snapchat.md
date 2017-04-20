@@ -12,9 +12,15 @@ We'll try and emulate this viral sensation by building an app which contains the
 4. Filter images,  
 5. Geofilters.
 
-## Community
+<div class="alert alert-info">
+<h3 class="alert-heading">
+	<i class="fa fa-commenting">&nbsp;</i>
+	Community</h3>
+	If you have any questions about this chapter feel free to ask over in the <a href="http://community.thunkable.com/t/teoc-3-thunkchat/2775?u=domhnall" class="alert-link"> Thunkable community forum</a>
+</div>
 
-If you have any questions about this chapter feel free to ask over in the [thunkable community forum](http://community.thunkable.com/t/teoc-3-thunkchat/2775?u=domhnall)
+## Digital Resources
+
 
 ## 1. Capture & Display Pictures
 
