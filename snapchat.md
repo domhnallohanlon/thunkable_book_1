@@ -4,7 +4,7 @@ In September 2011, three college students - working out of their dormroom in Sta
 
 <!-- ![snaptag](img/snaptag.png) -->
 
-We'll try and emulate this viral sensation by build an app which contains the following addictive features:
+We'll try and emulate this viral sensation by building an app which contains the following addictive features:
 
 1. The ability to capture pictures,
 2. Draw doodles,
@@ -117,7 +117,9 @@ Back in our test app we can use the absolute value of the headings to determine 
 
 In the test app we now use the notifer to give a short alert of which direction the screen was swiped. In our Thunkchat app, we'll be using this information to move back and forth through the filters. 
 
-![heading directions](img/heading_directions.gif)
+<img src="img/heading_directions.gif" height="480px">
+
+<!-- ![heading directions](img/heading_directions.gif) -->
 
 ### List Index
 
