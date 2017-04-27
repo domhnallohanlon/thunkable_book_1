@@ -120,8 +120,10 @@ To swipe between filters we're going to use the heading property of the <span cl
 
 Making test apps like this is a good idea for any new feature that you want to better understand. Build an app that lets you visualise how the data change as new events occur. In this case I've displayed the results via the <span class="block setter">set Screen1.Title</span> property, but you could just as easily use a label or notifier if you like. 
 
-Once our test app is built we see that swiping up always gives a positive result, while swiping down gives a negative result. If you've ever done any co-ordinate geometry will make sense, since swiping upwards creates a line with a positive slope while swiping downwards draws a line with a negative slope. 
-Similarly, when we swipe to the left the number is between 90 and 180 and swiping right returns a heading between 90 and 0. To accurately detect left or right swipes we have to take into account that the heading will have either a positive or negative sign. To deal with this we can use the <span class="block math">absolute</span> block from the math category.
+Once our test app is built we see that we can get results anywhere between -180 and +180. Swiping upwards (from the bottom of the screen towards the top) always gives a positive result, while swiping downwards gives a negative result. If you've ever studied co-ordinate geometry or vectors then this will make a lot of sense, since swiping upwards creates a line with a positive slope while swiping downwards draws a line with a negative slope. 
+The size, or magnitude, of the number corresponds to the angle, measured in degrees. Swiping right returns a heading direction between 0&deg; and 90&deg; and when we swipe to the left the heading direction is between 90&deg; and 180&deg;.
+
+To accurately detect left or right swipes we have to take into account that the heading can have either a positive or negative sign. To deal with this we can use the <span class="block math">absolute</span> block from the math category, which simple ignores the negative sign of a number.
 
 We can visualise the full range of values like this:
 
