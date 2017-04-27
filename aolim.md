@@ -59,19 +59,19 @@ This minimal design is very similar to Thunkaboards, but we take greater care wi
 
 The blocks are a little more complex than the previous app and we need a bit more background knowledge to fully understand everything. We'll learn a little bit about how computers display colours and how to represent data using  HTML. In order to get everything working we need to break all of these requirements into smaller, simpler sub-tasks. The whole point of this app is to transmit messages instantly, so we'll start there, but there are several points to cover so here's a quick overview:
 
-1. Greet the user by name
-2. Send data with Firebase
-3. Use HTML to format strings
-4. Create a Procedure
-5. Learn about Colours
+1. [Greet the user by name](#greet)
+2. [Send data with Firebase](#send)
+3. [Use HTML to format strings](#html)
+4. [Create a Procedure](#procedures)
+5. [Learn about Colours](#colours)
 
-### 1. Greet the User by Name
+### 1. Greet the User by Name {#greet}
 
 Recall that on Screen1 we sent the username as a start value to Screen2. To start off we will get that username and personalise the title bar with thier name. You can find the <span class="block control">get start value</span> block in the Control palette.
 
 ![also](img/tim_s2b1.png)
 
-### 2. Real-Time Chat with Firebase
+### 2. Real-Time Chat with Firebase {#send}
 
 The most techincally demanding aspect of this entire project is handled by the Firebase component. Since being acquired by Google in 2015, Firebase has exploded in popularity. With nothing more than a Google account (GMail, G Suite etc.) you can create powerful, fast and reliable databases with just a few clicks. 
 
@@ -87,7 +87,7 @@ An incredible thing happens with the <span class="block control">FirebaseDB1.Dat
 
 While sending plain text across the web is great and all, it would be nice to more closely emulate AIM, and to do this we'll have to learn a little bit about a second programming language, **H**yper**T**ext **M**arkup **L**anguage, or HTML to its friends.
 
-### 3. HTML
+### 3. HTML {#html}
 
 HTML is the language of the web, every day billions of web pages are displayed in browsers of all shapes and sizes, and HTML is the language used in almost all of them. There are many excellent, free (and paid) tutorials availabe online, and especially on YouTube, so I'll leave it to you for find one that you like.
 
@@ -104,7 +104,7 @@ In order to display the conversation as we, the developer, intended it for all u
 ![img](img/tim_s2b3.png)
 
 
-### 4. Procedures
+### 4. Procedures {#procedures}
 
 In the previous code we have created a join block and then duplicated it to display the HTML in the label and store it in our Firebase at the too. It is generally considered bad practice to have repetition like this in your code, and you will often hear about DRY programming, or **D**on't **R**epeat **Y**ourself.
 
@@ -127,7 +127,7 @@ If you want a wider selection of colours to choose from than just pre-defined co
 
 To understand more about hex, and how colours are represented in code read on!
 
-### 5. Colours
+### 5. Colours {#colours}
 
 It is also very useful to understand how computer represent colours. All our screens today are made up of pixels - tiny dots of colour that can be either red, green or blue. It sounds simple, but when you combine millions of pixels, and give them the ability to change colours 60 times per second, this enables us to see moving pictures on everything from smart watches up to flat-screen televisions.
 

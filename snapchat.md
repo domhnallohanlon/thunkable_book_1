@@ -6,11 +6,11 @@ In September 2011, three college students - working out of their dormroom in Sta
 
 We'll try and emulate this viral sensation by building an app which contains the following addictive features:
 
-1. The ability to capture pictures,
-2. Draw doodles,
-3. Add text,
-4. Filter images,  
-5. Geofilters.
+1. [The ability to capture pictures](#snaps),
+2. [Draw doodles](#doodle),
+3. [Add text](#label),
+4. [Filter images](#filter),  
+5. [Geofilters](#geofilters).
 
 <div class="alert alert-info">
 <h3 class="alert-heading">
@@ -28,7 +28,7 @@ We'll try and emulate this viral sensation by building an app which contains the
 	<i class="fa fa-clone"></i> Clone in Thunkable
 </a>
 
-## 1. Capture & Display Pictures
+## 1. Capture & Display Pictures {#snaps}
 
 We'll start with a simple prototype, and then add more components when we need more funcitonality. Our initial design has a big canvas for displaying images and a circular button to take the picture. To create circular buttons you need to change the shape to `oval` and set the height and width to be the same amount, i.e. 48px width and 48px height or 32px width and 32px height.
 
@@ -38,7 +38,7 @@ Taking a photo and displaying it on the screen is actually really easy. First of
 
 ![take photo](img/blocks_take_photo.png)
 
-## 2. Draw a doodle
+## 2. Draw a doodle {#doodle}
 
 Drawing a line anywhere on the screen only takes 6 blocks. The dragged event is fired whenever the user drags their finger around the screen. 
 
@@ -48,7 +48,7 @@ You might remember from math(s) class  that a line is just the shortest distance
 
 The canavs component gives us the option to change a wide variety of properties, such as paint color, font size and line width. 
 
-## 3. Add Text
+## 3. Add Text {#lable}
 
 For our next feature we'll let the user add text to their image by tapping on the screen. We could do this with a TextBox, but a better option is to use <span class="block procedure">Notifier1.Show Text Dialog</span>. 
 
@@ -77,7 +77,7 @@ Now the text is displayed, just like we did in the previous example;
 Finally, the <span class="block setter">Canvas1.PaintColor</span> is changed back to the original colour so that the doodle function works as expected.
 
 
-## 4. Filter
+## 4. Filter {#filter}
 
 Image filtering, where you change the pixel data of the image itself, is not easy to acomplish at the moment in Thunkable. Dedicated image manipulation programs such as Photoshop or Pixlr are designed specifically for this sort of task, but our Canvas isn't really up to the job so we're going to have to think creatively. If you've ever been to the theatre or a concert you will have seen (though maybe not noticed!) lighting gels. These are basically bits of coloured plastic that go over stage lights to change the colour of the light.
 
@@ -101,7 +101,7 @@ To take the guesswork out of colour picking I've used the [material design refer
 ![hex to rbg](img/paste_hex2.gif)
  -->
 
-### Lists
+### Lists {#lists}
 
 Lists are integral components to almost all computer programs. A list is simply a collection of data, or variables, and sometimes you might see people referring to lists as "arrays" - which is just another word for a collection. 
 
@@ -112,7 +112,7 @@ Using the mutator you can add as many filter colours as you like.
 ![list of filters](img/list_of_filters.gif)
 
 
-### Swipe Left and Right
+### Swipe Left and Right {#swipe}
 
 To swipe between filters we're going to use the heading property of the <span class="block control">Canvas1.Flung</span> event. The heading tells us what direction the screen was swiped, but how exactly does your phone represent these directions? To better understand what happens when user swipes their finger across the screen we can make a test app. 
 
@@ -149,7 +149,7 @@ If we combine the <span class="block list">select list item</span> block with ou
 ![filter index](img/filter_index1.png)
 
 
-### Incrementers
+### Incrementers {#incrementers}
 
 In the previous example if we want to go from one filter to the next we add 1 to our filter index. Similarly, if we want to go backwards through the list we have to subtract 1 from the filter index. This is a common pattern in programming known as an incrementer. For our Thunkchat app, swiping left will add 1 for our filter index and swiping right will subtract one. 
 
@@ -172,7 +172,7 @@ And we do the exact same thing when the user swipes left.
  -->
 Take you time to go through the blocks and understand them. Each event throws up a number of possibilities so we have to take all of these things into consideration to make sure our app doesn't crash. One thing we do is check to see if we've run out of filters from our lists. If the filter index has got too big, we reset it to 0, and if the filter index has gone below 1 we loop back to the end of the list using <span class="block list">length of list</span><span class="block variable">global listOfFilters</span> Aside from that, it's really just a combination of everything we've already done in this section.
 
-### Procedures
+### Procedures {#procedures}
 
 In the previous chapter we learned about procedures. Since applying the filter involves the exact same blocks, regardless of which way we swipe, this is an ideal candidate for its own procedure. We can create a procedure called <span class="block procedure">apply_filter</span> like this:
 
@@ -184,7 +184,7 @@ This makes it must easier to update our code, and improved the overall readibili
 
 
 
-## 5. Geofilters
+## 5. Geofilters {#geofilters}
 
 Now that we're comfortable with using the canvas, let's try a few sensors. In order to add location awareness and time-sensing capabilities to Thunkchat we're going to add a clock and a location sensor to our existing components. Here's what the updated component list should look like:
 ![components](img/comp_thunkchat2.png)
@@ -205,7 +205,7 @@ You can use either of the following two snippets to display the time on the canv
 ![custom time format](img/format_time_custom.png)
 
 
-### Show the location
+### Show the location {#location_sensor}
 
 Within the location sensor you can access the latitude and longitude values for your current location as well as being able to tell you your current address. The <span class="block getter">Location_Sensor1.Current Address</span> block tells you the street name, town name, city name, and postcode. For this application the exact street is probably too specific for most users so we can include either town or city.
 

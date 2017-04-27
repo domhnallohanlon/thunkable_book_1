@@ -2,9 +2,9 @@
 
 One of the earliest methods of communication on the internet was through message boards, or bulletin board systems. Using this software users could:
 
-1. Type messages on their own computer.
-2. Upload their messages to a server for others to read.
-3. Download messages that others had written, from the server.
+1. [Type messages on their own computer.](#type)
+2. [Upload their messages to a server for others to read.](#upload)
+3. [Download messages that others had written, from the server.](#download)
 
 We will try and replicate these three features in our first app. Before doing so it is important to remember that we have to break big, complex problems into a series of smaller, more managable challenges. 
 
@@ -17,7 +17,7 @@ As an homage to these early boards we will call our first app, Thunka-boards:
 	If you have any questions about this chapter feel free to ask over in the <a href="http://community.thunkable.com/t/teoc-1-thunkaboards/2773?u=domhnall" class="alert-link"> Thunkable community forum</a>
 </div>
 
-## 1. Display Text in a Label
+## 1. Display Text in a Label {#type}
 
 To get started with we'll take some text from a textbox and display it in a label.
 
@@ -83,7 +83,7 @@ When anything happens on your phone, from pressing a button up to recieving a ph
 In our app, any time that the button is pressed the <span class="block control">When Button1.Click</span> event happens. The code inside the event then happens in order, starting at the top and working its way downwards. 
 First the label is changed to show the new message. The dark green <span class="block setter">set Label1.text</span> block is known as a **setter** because it allows us to write, or set, new data in place of old. In our app we are replacing the old text in Label1 with new text which we get from TextBox1. The light green <span class="block getter">TextBox1.Text</span> and <span class="block getter">Label1.text</span> blocks are known as **getters** because the allow us to read - or get - data from a component.
 
-## 2. Upload the Text
+## 2. Upload the Text {#upload}
 
 At the moment all our messages are stored (temporarily!) on our phone only. This is fine for a note taking app, but it's not much use for communication. Let's add some more components to our app to communicate with the cloud. 
 
@@ -105,6 +105,8 @@ The first thing we want to do is use the <span class="block procedure">Tiny_Web_
 ![Store Value](img/store_value.gif)
 <hr>
 
+
+## 3. Download the Messages{#download}
 Once the text is successfully stored in the database we want to display the new value on the screen for the user to see the updated conversation. The first step of this is handling what happens when the ValueStored event is triggerd. In this snippet we just ask database for the data by using the <span class="block procedure">Tiny_Web_DB1.Get Value</span> block.  
 ![When Value Stored](img/when_value_stored.gif)
 <hr>
