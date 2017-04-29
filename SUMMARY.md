@@ -5,4 +5,6 @@
 * [Thunkable Instant Messenger](aolim.md)
 * [Thunkchat](snapchat.md)
 *	[Appendices](appendices.md)
+	* [Quick Start Guide](quick_start.md)
+	* [Using Extensions](extensions.md)
 

@@ -32,7 +32,11 @@
 }
 
 .color{
-	background-color: #909090;
+  background-color: #909090;
+}
+
+.split{
+	background-color: #6A6A6A;
 }
 
 .variable{
