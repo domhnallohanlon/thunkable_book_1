@@ -23,9 +23,22 @@ Extensions are <code>.aix</code> files that need to be downloaded from the devel
 	Check out the Thunkable Community to find out more about <a href="http://community.thunkable.com/t/image-editor-extension-no-internet-connection-required/2495?u=domhnall" class="alert-link"> the Image Editor Extension</a>
 </div>
 
-The full extension can be dowloaded from the Thunkable community, along with Mika's documentation and sample app.
+This powerful extension provides lots of features for editing images right from your app. One of the main benefits of this extensions is that, once installed, you user does not need to have an internet connection to use it. The full extension can be dowloaded from the Thunkable community, along with Mika's documentation and sample app.
 
 ![installation](img/install_iee.gif)
+
+### Colour Filter
+![installation](img/ie_filter.png)
+
+### Greyscale
+![installation](img/ie_greyscale.png)
+
+### Flip
+![installation](img/ie_flip.png)
+
+### Tint
+![installation](img/ie_tint.png)
+
 
 ## Colours Extension {#ce}
 
@@ -33,7 +46,7 @@ The full extension can be dowloaded from the Thunkable community, along with Mik
 <h3 class="alert-heading">
 	<i class="fa fa-commenting">&nbsp;</i>
 	Community</h3>
-	Check out the Thunkable Community to find out more about <a href="http://community.thunkable.com/t/colours-extension/2513?u=domhnall" class="alert-link"> the Image Editor Extension</a>
+	Check out the Thunkable Community to find out more about <a href="http://community.thunkable.com/t/colours-extension/2513?u=domhnall" class="alert-link"> the Colours Extension</a>
 </div>
 
 The full extension can be dowloaded from the Thunkable community, along with Helios' documentation and sample app.
